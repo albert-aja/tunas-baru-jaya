@@ -21,8 +21,8 @@
                             <th>Foto</th>
                             <td>
                                 @if($data->foto != '')
-                                <TombolPreviewFilePDF file="{{ asset('storage/app/produk/'.$data->foto) }}" class="btn btn-primary btn-sm">Lihat</TombolPreviewFilePDF>
-                                <a href="{{ asset('storage/app/produk/'.$data->foto) }}" class="btn btn-success btn-sm"  download="{{ $data->nama }}">Download</a>
+                                <TombolPreviewFilePDF file="{{ asset('storage/produk/'.$data->foto) }}" class="btn btn-primary btn-sm">Lihat</TombolPreviewFilePDF>
+                                <a href="{{ asset('storage/produk/'.$data->foto) }}" class="btn btn-success btn-sm"  download="{{ $data->nama }}">Download</a>
                                 @else
                                 Tidak Ada
                                 @endif
