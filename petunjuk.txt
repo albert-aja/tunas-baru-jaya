@@ -1,0 +1,6 @@
+Cara run:
+
+1. Jalankan XAMPP.
+2. Buka terminal (ctrl + ` untuk terminal di VScode).
+3. Jalankan command php artisan serve di terminal.
+4. Buka link http://127.0.0.1:8000 di browser.
