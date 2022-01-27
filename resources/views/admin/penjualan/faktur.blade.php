@@ -46,7 +46,7 @@
         <header>
             <table style="width: 100%; margin-bottom: 20px;">
                 <tr>
-                    <th style="width: 80px;"><img src="{{ asset('dashboard-package/img/logo/logo.jpeg') }}" style="width: 80px;"></th>
+                    <th style="width: 80px;"><img src="dashboard-package/img/logo/logo.jpeg" style="width: 80px;"></th>
                     <th style="font-size: 16pt; text-align: left; vertical-align: middle !important;">UD. Tunas Baru Jaya</th>
                 </tr>
             </table>

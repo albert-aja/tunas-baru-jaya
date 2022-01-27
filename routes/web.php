@@ -155,6 +155,7 @@ Route::group(['middleware' => ['auth']], function () {
                 Route::group(['middleware' => ['permission:Melihat Penjualan']], function () {
                     Route::get('/{id}', [App\Http\Controllers\Admin\Penjualan::class, 'show'])->name('Admin Penjualan Show');
                     Route::get('/{id}/faktur', [App\Http\Controllers\Admin\Penjualan::class, 'faktur'])->name('Admin Penjualan Faktur');
+                    Route::get('/{id}/test', [App\Http\Controllers\Admin\Penjualan::class, 'test'])->name('test');
                 });
 
                 Route::group(['middleware' => ['permission:Mengubah Penjualan']], function () {

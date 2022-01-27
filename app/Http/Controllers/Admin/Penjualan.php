@@ -90,12 +90,17 @@ class Penjualan extends Controller
         return view('admin.penjualan.show', compact('data'));
     }
 
+    public function test($id){
+        $data = ModelsPenjualan::findOrFail($id);
+        return view('admin.penjualan.faktur', compact('data'));
+    }
+
     public function faktur($id)
     {
         $data = ModelsPenjualan::findOrFail($id);
 
         ini_set('max_execution_time', 300);
-        ini_set("memory_limit","512M");
+        ini_set("memory_limit","2048M");
         
         $pdf = PDF::loadView('admin.penjualan.faktur', compact('data'));
         return $pdf->stream('Faktur Penjualan ' . $data->no_faktur . '.pdf');
@@ -344,7 +349,7 @@ class Penjualan extends Controller
                 return Carbon::parse($data->waktu_transaksi)->isoFormat('dddd, D MMMM Y');
             })
             ->editColumn('bukti_transaksi', function ($data) {
-                return ($data->bukti_transaksi != '' ? '<TombolPreviewFile file="' . asset("storage/app/bukti-transaksi/$data->bukti_transaksi") . '" class="btn btn-primary btn-xs">Lihat</TombolPreviewFile>' : 'Tidak Ada');
+                return ($data->bukti_transaksi != '' ? '<TombolPreviewFile file="' . asset("storage/bukti-transaksi/$data->bukti_transaksi") . '" class="btn btn-primary btn-xs">Lihat</TombolPreviewFile>' : 'Tidak Ada');
             })
             ->editColumn('nominal', function ($data) {
                 return General::get_currency($data->nominal);
